@@ -27,11 +27,50 @@
         </header>
     <main id="top">
         <section class="hero">
-            <div class="container">
-                <h1 class="reveal">Hello, я Кира</h1>
+      <div class="container hero__inner">
+        <div class="hero__text">
+          <div class="status reveal">
+            <span class="status__dot"></span>
+            Открыта к предложениям
+          </div>
 
-            </div>
-        </section>
+          <h1 class="hero__title reveal">
+            <span class="hero__hello">
+              Hello
+              <svg class="hero__star" viewBox="0 0 100 100" aria-hidden="true">
+                <path d="M50 0 L61 34 L96 25 L70 50 L96 75 L61 66 L50 100 L39 66 L4 75 L30 50 L4 25 L39 34 Z"/>
+              </svg>
+            </span>
+            <span class="hero__name">я Кира</span>
+          </h1>
+
+          <p class="hero__lead reveal">
+            Веб-дизайнер и frontend-разработчик. Проектирую интерфейсы в Figma
+            и сама довожу их до живого кода — на чистом JavaScript, React или Tilda.
+          </p>
+        </div>
+
+        <div class="hero__photo reveal">
+          <img src="img/photo.jpg" alt="Кира" onerror="this.style.display='none'">
+          <span class="hero__sticker hero__sticker--accent">frontend + web-design</span>
+          <span class="hero__sticker hero__sticker--dark">Краснодар</span>
+        </div>
+      </div>
+
+      <div class="gravity" id="grabity" aria-label="Мои навыки">
+        <span class="gravity__tag" style="--bg:#6A4CF0;--c:#FFFFFF">HTML / CSS / JS</span>
+        <span class="gravity__tag" style="--bg:#FFC93C">React</span>
+        <span class="gravity__tag" style="--bg:#141414;--c:#FFFFFF">Tilda + Zero Block</span>
+        <span class="gravity__tag" style="--bg:#E7E0FF">Figma</span>
+        <span class="gravity__tag">Интеграции с API</span>
+        <span class="gravity__tag" style="--bg:#F5A3D6">Экономист по образованию</span>
+        <span class="gravity__tag" style="--bg:#D9F27E">English C1</span>
+        <span class="gravity__tag gravity__tag--outline">Адаптивная вёрстка</span>
+        <span class="gravity__tag" style="--bg:#6A4CF0;--c:#FFFFFF">Git</span>
+        <span class="gravity__tag" style="--bg:#FFC93C">В прошлом — продажи и преподавание</span>
+        
+      </div>
+    </section>
 
         <section id="works" class="section">
             <div class="container">
@@ -58,7 +97,8 @@
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+  <script src="main.js"></script>
     
 </body>
 </html>
