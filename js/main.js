@@ -1,26 +1,29 @@
+
 document.addEventListener('DOMContentLoaded', () => {
-    const items = document.querySelectorAll('.reveal');
+  const items = document.querySelectorAll('.reveal');
 
-    if (!('IntersectionObserverer' in window)) {
-        items.forEach((el) => el.classList.add('is-visible'));
-        return;
-    }
+  if (!('IntersectionObserver' in window)) {
+    items.forEach((el) => el.classList.add('is-visible'));
+    return;
+  }
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            if (entry.isInteresting) {
-                entry.target.classList.add('is-visible');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, {threshold: 0.15});
-
-    items.forEach((el, i) => {
-        el.style.transitionDelay = `${(i % 4) * 0.1}s`;
-        observer.observe(el);
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
     });
+  }, { threshold: 0.15 });
 
+  items.forEach((el, i) => {
+    el.style.transitionDelay = `${(i % 4) * 0.1}s`;
+    observer.observe(el);
+  });
 });
+
+
+
 window.addEventListener('load', () => {
   const box = document.getElementById('gravity');
   if (!box) return;
@@ -41,12 +44,11 @@ window.addEventListener('load', () => {
 
     let width = box.clientWidth;
     const height = box.clientHeight;
-    const wall = 100; 
+    const wall = 100;
 
     const engine = Engine.create();
-    engine.gravity.y = 0.9; 
+    engine.gravity.y = 0.9;
 
-    
     const floor = Bodies.rectangle(width / 2, height + wall / 2, 5000, wall, { isStatic: true });
     const leftWall = Bodies.rectangle(-wall / 2, height / 2, wall, height * 4, { isStatic: true });
     const rightWall = Bodies.rectangle(width + wall / 2, height / 2, wall, height * 4, { isStatic: true });
@@ -58,15 +60,15 @@ window.addEventListener('load', () => {
       const isSticker = el.classList.contains('gravity__sticker');
 
       const body = Bodies.rectangle(
-        w / 2 + Math.random() * Math.max(width - w, 1), 
-        -h - i * 80,                                    
+        w / 2 + Math.random() * Math.max(width - w, 1),
+        -h - i * 80,
         w,
         h,
         {
-          chamfer: { radius: isSticker ? 10 : h / 2 - 1 }, 
-          restitution: 0.45,                               
+          chamfer: { radius: isSticker ? 10 : h / 2 - 1 },
+          restitution: 0.45,
           friction: 0.3,
-          angle: (Math.random() - 0.5) * 0.8               
+          angle: (Math.random() - 0.5) * 0.8
         }
       );
 
@@ -75,12 +77,11 @@ window.addEventListener('load', () => {
       return { el, body, w, h };
     });
 
-    
     const isTouch = window.matchMedia('(pointer: coarse)').matches;
     if (!isTouch) {
       const mouse = Mouse.create(box);
       ['mousewheel', 'DOMMouseScroll', 'wheel'].forEach((ev) => {
-        mouse.element.removeEventListener(ev, mouse.mousewheel); 
+        mouse.element.removeEventListener(ev, mouse.mousewheel);
       });
       const drag = MouseConstraint.create(engine, {
         mouse,
@@ -89,14 +90,12 @@ window.addEventListener('load', () => {
       Composite.add(engine.world, drag);
     }
 
-    
     window.addEventListener('resize', () => {
       width = box.clientWidth;
       Body.setPosition(floor, { x: width / 2, y: height + wall / 2 });
       Body.setPosition(rightWall, { x: width + wall / 2, y: height / 2 });
     });
 
-    
     function tick() {
       Engine.update(engine, 1000 / 60);
       items.forEach(({ el, body, w, h }) => {
@@ -108,7 +107,6 @@ window.addEventListener('load', () => {
     tick();
   }
 
- 
   const observer = new IntersectionObserver((entries) => {
     if (entries[0].isIntersecting) {
       start();
