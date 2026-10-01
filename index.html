@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Кира - веб-дизайнер и frontend-разработчик</title>
-    <meta name="description" content="Портфолио Киры: веб-дизайн и frontend-разработка. HTML, CSS, JavaScript, React, Figma, Tilda, Adobe Photoshop">
+    <title>Кира - UI/UX Designerи frontend-разработчик</title>
+    <meta name="description" content="Портфолио Киры: UI/UX design и frontend-разработка. HTML, CSS, JavaScript, React, Figma, Tilda, Adobe Photoshop">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel ="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,23 +36,23 @@
 
           <h1 class="hero__title reveal">
             <span class="hero__hello">
-              Hello
+              Hello,
               <svg class="hero__star" viewBox="0 0 100 100" aria-hidden="true">
                 <path d="M50 0 L61 34 L96 25 L70 50 L96 75 L61 66 L50 100 L39 66 L4 75 L30 50 L4 25 L39 34 Z"/>
               </svg>
             </span>
-            <span class="hero__name">я Кира</span>
+            <span class="hero__name">я <span class="hero__accent">Кира</span>
           </h1>
 
           <p class="hero__lead reveal">
-            Веб-дизайнер и frontend-разработчик. Проектирую интерфейсы в Figma
+            UI/UX Designer и frontend-разработчик. Проектирую понятные интерфейсы в Figma
             и сама довожу их до живого кода — на чистом JavaScript, React или Tilda.
           </p>
         </div>
 
         <div class="hero__photo reveal">
-          <img src="img/photo.jpg" alt="Кира" onerror="this.style.display='none'">
-          <span class="hero__sticker hero__sticker--accent">frontend + web-design</span>
+          <img src="img/myphoto.jpg" alt="Кира" onerror="this.style.display='none'">
+          <span class="hero__sticker hero__sticker--accent">frontend + UI/UX design</span>
           <span class="hero__sticker hero__sticker--dark">Краснодар</span>
         </div>
       </div>
@@ -72,23 +72,84 @@
       </div>
     </section>
 
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>UI/UX ✦ Figma ✦ Прототипы ✦ HTML ✦ CSS ✦ JavaScript ✦ React ✦ Tilda ✦ Адаптив ✦ Анимации ✦</span>
+        <span>UI/UX ✦ Figma ✦ Прототипы ✦ HTML ✦ CSS ✦ JavaScript ✦ React ✦ Tilda ✦ Адаптив ✦ Анимации ✦</span>
+      </div>
+    </div>
+
         <section id="works" class="section">
             <div class="container">
                 <h2 class="h2 reveal">Проекты</h2>
             </div>
         </section>
 
-        <section id="about" class="section">
-            <div class="container">
-                <h2 class="h2 reveal">Обо мне</h2>
-            </div>
-        </section>
+            <section id="about" class="section">
+      <div class="container about">
+        <div class="about__text">
+          <h2 class="h2 reveal">Обо мне</h2>
+          <p class="about__lead reveal">
+            Я пришла в дизайн интерфейсов из экономики и продаж — поэтому сначала
+            разбираюсь, какую задачу бизнеса решает продукт, а потом рисую экраны.
+          </p>
+          <p class="about__desc reveal">
+            В Sellervibes верстаю и довожу до продакшена интерфейсы сайта компании
+            и сервиса аналитики SellerX — с подключением к API. Поэтому мои макеты
+            реалистичны для разработки: я сама знаю, как их сверстать.
+          </p>
+        </div>
 
-        <section id="skills" class="contacts">
-            <div class="container">
-                <h2 class="h2 reveal">Что умею?</h2>
-            </div>
-        </section>
+        <dl class="facts reveal">
+          <div class="facts__row">
+            <dt>Опыт</dt>
+            <dd>Frontend в Sellervibes с 2025</dd>
+          </div>
+          <div class="facts__row">
+            <dt>Образование</dt>
+            <dd>КубГАУ, цифровая экономик и инновации, 2026</dd>
+          </div>
+          <div class="facts__row">
+            <dt>До этого</dt>
+            <dd>Продажи и обучение английскому</dd>
+          </div>
+          <div class="facts__row">
+            <dt>Языки</dt>
+            <dd>Русский, English C1</dd>
+          </div>
+          <div class="facts__row">
+            <dt>Ищу</dt>
+            <dd>UI/UX и frontend-позиции</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section id="skills" class="section section--tight">
+      <div class="container">
+        <h2 class="h2 reveal">Что умею</h2>
+
+        <div class="skills">
+          <article class="skill reveal">
+            <span class="skill__num">01</span>
+            <h3 class="skill__title">UI/UX-дизайн</h3>
+            <p class="skill__text">Макеты и прототипы в Figma, пользовательские сценарии, адаптив под телефон и понятная структура страниц</p>
+          </article>
+
+          <article class="skill reveal">
+            <span class="skill__num">02</span>
+            <h3 class="skill__title">Вёрстка и код</h3>
+            <p class="skill__text">HTML, CSS, JavaScript, React; анимации, формы и работа с API</p>
+          </article>
+
+          <article class="skill skill--accent reveal">
+            <span class="skill__num">03</span>
+            <h3 class="skill__title">Tilda без ограничений</h3>
+            <p class="skill__text">Zero Block, кастомные HTML-блоки и скрипты там, где стандартных блоков мало</p>
+          </article>
+        </div>
+      </div>
+    </section>
     </main>
 
     <footer id="contacts" class="contacts">
