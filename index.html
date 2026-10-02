@@ -1,32 +1,41 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Кира - UI/UX Designerи frontend-разработчик</title>
-    <meta name="description" content="Портфолио Киры: UI/UX design и frontend-разработка. HTML, CSS, JavaScript, React, Figma, Tilda, Adobe Photoshop">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Кира — UI/UX Designer и frontend-разработчик</title>
+  <meta name="description" content="Портфолио Киры: UI/UX design и frontend-разработка. HTML, CSS, JavaScript, React, Figma, Tilda, Adobe Photoshop">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel ="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <header class ="header">
-        <div class="container header__inner">
-            <a href="#top" class="logo">kira.dev</a>
-            <nav class="nav">
-                <a href="#works" class="nav__link">Проекты</a>
-                <a href="#about" class="nav__link">Обо мне</a>
-                <a href="#skills" class="nav__link">Что умею?</a>
-                <a href="#contacts" class="btn btn--dark">Написать</a>
-                
-            </nav>
-        </div>
-        </header>
-    <main id="top">
-        <section class="hero">
+   <header class="header">
+    <div class="container header__inner">
+      <a href="#top" class="logo">kira.dev</a>
+
+      <button class="burger" id="burger" type="button"
+              aria-label="Открыть меню" aria-expanded="false" aria-controls="nav">
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav" id="nav">
+        <a href="#works" class="nav__link">Проекты</a>
+        <a href="#about" class="nav__link">Обо мне</a>
+        <a href="#skills" class="nav__link">Что умею?</a>
+        <a href="#contacts" class="btn btn--dark">Написать</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+
+    
+    <section class="hero">
       <div class="container hero__inner">
         <div class="hero__text">
           <div class="status reveal">
@@ -41,7 +50,7 @@
                 <path d="M50 0 L61 34 L96 25 L70 50 L96 75 L61 66 L50 100 L39 66 L4 75 L30 50 L4 25 L39 34 Z"/>
               </svg>
             </span>
-            <span class="hero__name">я <span class="hero__accent">Кира</span>
+            <span class="hero__name">я <span class="hero__accent">Кира</span></span>
           </h1>
 
           <p class="hero__lead reveal">
@@ -57,21 +66,22 @@
         </div>
       </div>
 
-      <div class="gravity" id="grabity" aria-label="Мои навыки">
+      
+      <div class="gravity" id="gravity" aria-label="Мои навыки">
         <span class="gravity__tag" style="--bg:#6A4CF0;--c:#FFFFFF">HTML / CSS / JS</span>
         <span class="gravity__tag" style="--bg:#FFC93C">React</span>
         <span class="gravity__tag" style="--bg:#141414;--c:#FFFFFF">Tilda + Zero Block</span>
         <span class="gravity__tag" style="--bg:#E7E0FF">Figma</span>
-        <span class="gravity__tag">Интеграции с API</span>
+        <span class="gravity__tag" style="--bg:#FF7A59;--c:#141414">Интеграции с API</span>
         <span class="gravity__tag" style="--bg:#F5A3D6">Экономист по образованию</span>
         <span class="gravity__tag" style="--bg:#D9F27E">English C1</span>
         <span class="gravity__tag gravity__tag--outline">Адаптивная вёрстка</span>
         <span class="gravity__tag" style="--bg:#6A4CF0;--c:#FFFFFF">Git</span>
         <span class="gravity__tag" style="--bg:#FFC93C">В прошлом — продажи и преподавание</span>
-        
       </div>
     </section>
 
+    
     <div class="marquee" aria-hidden="true">
       <div class="marquee__track">
         <span>UI/UX ✦ Figma ✦ Прототипы ✦ HTML ✦ CSS ✦ JavaScript ✦ React ✦ Tilda ✦ Адаптив ✦ Анимации ✦</span>
@@ -79,13 +89,212 @@
       </div>
     </div>
 
-        <section id="works" class="section">
-            <div class="container">
-                <h2 class="h2 reveal">Проекты</h2>
-            </div>
-        </section>
+    
+       <!-- ===== Проекты ===== -->
+    <section id="works" class="section">
+      <div class="container">
 
-            <section id="about" class="section">
+        <div class="section-head reveal">
+          <h2 class="h2">Проекты</h2>
+          <p class="section-head__note">Продукт, дизайн и код</p>
+        </div>
+
+        <!-- Группа 1: АффиксБартер -->
+        <div class="group">
+          <div class="group__head reveal">
+            <div>
+              <h3 class="group__title">Аффикс Групп</h3>
+              <p class="group__role">Продуктовый концепт · рекламное агентство</p>
+            </div>
+            <ul class="tags">
+              <li class="tag">Продукт с нуля</li>
+              <li class="tag">Стратегия</li>
+              <li class="tag">ИИ</li>
+            </ul>
+          </div>
+
+          <a href="affix.html" class="card card--wide reveal">
+            <div class="card__media card__media--sand">
+              <img src="img/affix/cover.jpg" alt="Платформа АффиксБартер: веб-версия и мобильная версия">
+            </div>
+            <span class="badge badge--concept">Концепт</span>
+            <div class="card__body">
+              <h4 class="card__title">АффиксБартер — платформа бартерной рекламы</h4>
+              <p class="card__text">
+                Придумала продукт для агентства «Аффикс Групп»: стратегию, бизнес-модель,
+                архитектуру из 5 ИИ-модулей и интерфейс веб- и мобильной версии.
+              </p>
+              <div class="card__meta">
+                <span>Стратегия · UI/UX · Web + Mobile</span>
+                <span class="card__more">Смотреть кейс →</span>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Группа 2: свои проекты -->
+        <div class="group">
+          <div class="group__head reveal">
+            <div>
+              <h3 class="group__title">Свои проекты</h3>
+              <p class="group__role">Дизайн и разработка от идеи до кода</p>
+            </div>
+            <ul class="tags">
+              <li class="tag">Vanilla JS</li>
+              <li class="tag">Canvas</li>
+              <li class="tag">Telegram</li>
+            </ul>
+          </div>
+
+          <div class="cards cards--three">
+            <!-- Ledger -->
+            <a href="ledger.html" class="card reveal">
+              <div class="card__media card__media--forest">
+                <img src="img/ledger/cover.jpg" alt="Ledger: калькулятор ROI и NPV на компьютере и телефоне">
+              </div>
+              <span class="badge badge--done">Можно посмотреть</span>
+              <div class="card__body">
+                <h4 class="card__title">Ledger</h4>
+                <p class="card__text">Финансовый калькулятор: считает ROI, NPV и срок окупаемости и рисует график денежного потока на canvas</p>
+                <div class="card__meta">
+                  <span>JavaScript · Canvas</span>
+                  <span class="card__more">Смотреть кейс →</span>
+                </div>
+              </div>
+            </a>
+
+            <!-- Telegram-бот -->
+            <div class="card reveal">
+              <div class="card__media card__media--sky">
+                <div class="mock-tg">
+                  <div class="mock-tg__head">
+                    <span class="mock-tg__avatar"></span>
+                    <span class="mock-tg__name">Запись в салон</span>
+                  </div>
+                  <div class="mock-tg__body">
+                    <span class="mock-tg__msg">Выберите услугу и удобный день</span>
+                    <span class="mock-tg__msg mock-tg__msg--me">Стрижка, пятница</span>
+                    <span class="mock-tg__msg">Свободное время:</span>
+                    <div class="mock-tg__slots">
+                      <span>12:00</span><span>15:30</span><span>18:00</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <span class="badge badge--outline">В разработке</span>
+              <div class="card__body">
+                <h4 class="card__title">Бот записи в салон</h4>
+                <p class="card__text">
+                  Telegram-бот для онлайн-записи с интеграцией DIKIDI. В салоне один мастер,
+                  поэтому сценарий без лишнего шага выбора специалиста.
+                </p>
+                <div class="card__meta">
+                  <span>JavaScript · Telegram · API DIKIDI</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Слот под новый проект -->
+            <div class="card card--soon reveal">
+              <div class="card--soon__inner">
+                <span class="card--soon__plus" aria-hidden="true">+</span>
+                <h4 class="card__title">Новый проект</h4>
+                <p class="card__text">Уже в работе. Скоро появится здесь</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Группа 3: Sellervibes (под NDA) -->
+        <div class="group">
+          <div class="group__head reveal">
+            <div>
+              <h3 class="group__title">Sellervibes</h3>
+              <p class="group__role">Frontend-разработчик · с августа 2025</p>
+            </div>
+            <ul class="tags">
+              <li class="tag">E-commerce</li>
+              <li class="tag">Аналитика</li>
+              <li class="tag">Tilda + JS</li>
+            </ul>
+          </div>
+
+          <div class="cards cards--two">
+            <!-- Сервис аналитики -->
+            <div class="card card--locked reveal">
+              <div class="card__media card__media--dark">
+                <div class="mock-dash">
+                  <div class="mock-dash__side">
+                    <span class="mock-line"></span>
+                    <span class="mock-line mock-line--accent" style="width:80%"></span>
+                    <span class="mock-line" style="width:70%"></span>
+                    <span class="mock-line" style="width:85%"></span>
+                  </div>
+                  <div class="mock-dash__main">
+                    <div class="mock-dash__stats">
+                      <span class="mock-dash__stat"></span>
+                      <span class="mock-dash__stat"></span>
+                      <span class="mock-dash__stat"></span>
+                    </div>
+                    <div class="mock-dash__chart">
+                      <span class="mock-dash__bar" style="--h:35%"></span>
+                      <span class="mock-dash__bar" style="--h:55%"></span>
+                      <span class="mock-dash__bar" style="--h:45%"></span>
+                      <span class="mock-dash__bar mock-dash__bar--accent" style="--h:75%"></span>
+                      <span class="mock-dash__bar" style="--h:60%"></span>
+                      <span class="mock-dash__bar mock-dash__bar--accent" style="--h:85%"></span>
+                      <span class="mock-dash__bar" style="--h:50%"></span>
+                    </div>
+                  </div>
+                </div>
+                <span class="lock">🔒 Покажу после запуска</span>
+              </div>
+              <span class="badge badge--nda">Под NDA</span>
+              <div class="card__body">
+                <h4 class="card__title">Сервис аналитики для селлеров</h4>
+                <p class="card__text">Интерфейс сервиса для селлеров маркетплейсов: расчёт поставок и скидок, подключение к API</p>
+                <div class="card__meta">
+                  <span>HTML · CSS · JavaScript · API</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Сайт компании -->
+            <div class="card card--locked reveal">
+              <div class="card__media card__media--lilac">
+                <div class="mock-browser">
+                  <div class="mock-browser__bar">
+                    <span class="mock-browser__dot"></span>
+                    <span class="mock-browser__dot"></span>
+                    <span class="mock-browser__dot"></span>
+                  </div>
+                  <div class="mock-browser__body">
+                    <span class="mock-line mock-line--ink" style="width:75%"></span>
+                    <span class="mock-line mock-line--ink" style="width:50%"></span>
+                    <span class="mock-line mock-line--soft" style="width:85%;margin-top:6px"></span>
+                    <span class="mock-line mock-line--soft" style="width:65%"></span>
+                    <span class="mock-pill"></span>
+                  </div>
+                </div>
+                <span class="lock">🔒 Покажу после запуска</span>
+              </div>
+              <span class="badge badge--nda">Под NDA</span>
+              <div class="card__body">
+                <h4 class="card__title">Сайт компании</h4>
+                <p class="card__text">Кастомные секции на Tilda: Zero Block, свой JavaScript и интеграция с API</p>
+                <div class="card__meta">
+                  <span>Tilda · HTML · CSS · JS</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== Обо мне ===== -->
+    <section id="about" class="section">
       <div class="container about">
         <div class="about__text">
           <h2 class="h2 reveal">Обо мне</h2>
@@ -94,20 +303,21 @@
             разбираюсь, какую задачу бизнеса решает продукт, а потом рисую экраны.
           </p>
           <p class="about__desc reveal">
-            В Sellervibes верстаю и довожу до продакшена интерфейсы сайта компании
-            и сервиса аналитики SellerX — с подключением к API. Поэтому мои макеты
-            реалистичны для разработки: я сама знаю, как их сверстать.
+            Работала frontend-разработчиком в небольшой продуктовой команде
+            в сфере e-commerce: верстаю и довожу до продакшена интерфейсы сайта
+            и сервиса аналитики, подключаю их к API. Поэтому мои макеты реалистичны
+            для разработки — я сама знаю, как их сверстать.
           </p>
         </div>
 
         <dl class="facts reveal">
           <div class="facts__row">
             <dt>Опыт</dt>
-            <dd>Frontend в Sellervibes с 2025</dd>
+            <dd>Frontend в SellerVibes с 2025</dd>
           </div>
           <div class="facts__row">
             <dt>Образование</dt>
-            <dd>КубГАУ, цифровая экономик и инновации, 2026</dd>
+            <dd>КубГАУ, цифровая экономика и инновации, 2026</dd>
           </div>
           <div class="facts__row">
             <dt>До этого</dt>
@@ -125,6 +335,7 @@
       </div>
     </section>
 
+    
     <section id="skills" class="section section--tight">
       <div class="container">
         <h2 class="h2 reveal">Что умею</h2>
@@ -150,16 +361,42 @@
         </div>
       </div>
     </section>
-    </main>
 
-    <footer id="contacts" class="contacts">
-        <div class="container">
-            <h2 class="h2 reveal">Давайте сделаем сайт</h2>
-        </div>
-    </footer>
+  </main>
 
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+  
+    <!-- ===== Контакты ===== -->
+  <footer id="contacts" class="contacts">
+    <div class="container">
+      <p class="contacts__label reveal">Контакты</p>
+
+      <h2 class="contacts__title reveal">
+        Давайте<br>поработаем <span class="contacts__accent">вместе</span>
+      </h2>
+
+      <p class="contacts__text reveal">
+        Открыта к предложениям о работе на позициях UI/UX и frontend, а также к интересным проектам.
+      </p>
+
+      <div class="contacts__actions reveal">
+        <button class="contacts__btn contacts__btn--primary" type="button" data-copy="[your@mail.ru]">
+          <span>kira.gnatyuk@mail.ru</span>
+          <span class="contacts__copy" aria-live="polite">Скопировать</span>
+        </button>
+        <a class="contacts__btn" href="https://t.me/kwkirra" target="_blank" rel="noopener">Telegram ↗</a>
+        <a class="contacts__btn" href="https://github.com/kiki555-dev" target="_blank" rel="noopener">GitHub ↗</a>
+        <a class="contacts__btn" href="https://drive.google.com/file/d/1ScKjacYx1f1wkusGlJE7G8UYGajfovh7/view?usp=sharing" target="_blank" rel="noopener">Резюме ↗</a>
+      </div>
+
+      <div class="contacts__bottom">
+        <span>© Кира, 2026</span>
+        <span>Сделано вручную: HTML, CSS, JavaScript</span>
+        <a href="#top" class="contacts__up">Наверх ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
   <script src="js/main.js"></script>
-    
 </body>
 </html>

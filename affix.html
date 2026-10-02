@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>АффиксБартер — платформа бартерной рекламы | кейс Киры</title>
+  <meta name="description" content="Продуктовый кейс: стратегия, бизнес-модель, ИИ-архитектура и интерфейс платформы бартерной рекламы для агентства «Аффикс Групп».">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== Шапка ===== -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="index.html" class="logo">kira.dev</a>
+
+      <button class="burger" id="burger" type="button"
+              aria-label="Открыть меню" aria-expanded="false" aria-controls="nav">
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav" id="nav">
+        <a href="index.html#works" class="nav__link">Проекты</a>
+        <a href="index.html#about" class="nav__link">Обо мне</a>
+        <a href="index.html#skills" class="nav__link">Что умею?</a>
+        <a href="#contacts" class="btn btn--dark">Написать</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+        <!-- ===== Начало кейса ===== -->
+    <section class="case-hero">
+      <div class="container">
+        <a href="index.html#works" class="back-link reveal">← Все проекты</a>
+
+        <div class="case-hero__pills reveal">
+          <span class="pill pill--accent">Продуктовый концепт</span>
+          <span class="pill">Стратегия</span>
+          <span class="pill">ИИ</span>
+          <span class="pill">UI/UX</span>
+          <span class="pill">Web + Mobile</span>
+        </div>
+
+        <h1 class="case-title reveal">АффиксБартер</h1>
+
+        <p class="case-lead reveal">
+          Платформа, на которой малый и средний бизнес получает наружную рекламу
+          на конструкциях агентства «Аффикс Групп» по бартеру — расплачиваясь своими
+          товарами и услугами. Я придумала продукт целиком: стратегию, бизнес-модель,
+          архитектуру ИИ-модулей и интерфейс веб- и мобильной версии.
+        </p>
+
+        <dl class="case-meta reveal">
+          <div class="case-meta__item">
+            <dt>Роль</dt>
+            <dd>Автор идеи, стратегия продукта, UI/UX</dd>
+          </div>
+          <div class="case-meta__item">
+            <dt>Компания</dt>
+            <dd>«Аффикс Групп», рекламное агентство полного цикла</dd>
+          </div>
+          <div class="case-meta__item">
+            <dt>Платформы</dt>
+            <dd>Веб и мобильная версия</dd>
+          </div>
+          <div class="case-meta__item">
+            <dt>Дизайн интерфейса</dt>
+            <dd>4 дня</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ===== Обложка ===== -->
+    <div class="container">
+      <figure class="shot shot--cover reveal" data-label="img/affix/cover.jpg">
+        <img src="img/affix/cover.jpg" alt="Лендинг платформы АффиксБартер в браузере и мобильная версия" onerror="this.remove()">
+      </figure>
+    </div>
+
+    <!-- ===== Блоки кейса ===== -->
+    <div class="container case-body">
+
+      <section class="case-block reveal">
+        <h2 class="case-block__title">Контекст</h2>
+        <div class="case-block__text">
+          <p>
+            «Аффикс Групп» — рекламное агентство полного цикла с собственными рекламными
+            конструкциями. Идея платформы появилась во время практики в агентстве, когда
+            я работала над дипломом: стратегия «АффиксБартер» стала частью моей выпускной
+            работы в КубГАУ.
+          </p>
+          <p>
+            У агентства бывают незагруженные конструкции, а у малого и среднего бизнеса —
+            товары и услуги, которыми он готов расплатиться за рекламу. Платформа соединяет
+            эти две стороны и делает обмен честным: ИИ оценивает стоимость, подбирает
+            партнёра и проверяет, что реклама действительно размещена.
+          </p>
+        </div>
+      </section>
+
+      <section class="case-block reveal">
+        <h2 class="case-block__title">Стратегия и бизнес-модель</h2>
+        <div class="case-block__text">
+          <p>
+            Как экономист по образованию, я начала не с экранов, а с ответа на вопрос,
+            зачем этот продукт агентству. Стратегия держится на трёх опорах:
+          </p>
+
+          <div class="pillars">
+            <div class="pillar">
+              <h3 class="pillar__title">Монетизация инвентаря</h3>
+              <p class="pillar__text">Незагруженные конструкции становятся бартерным фондом — из расходов в доходы</p>
+            </div>
+            <div class="pillar">
+              <h3 class="pillar__title">Самофинансирование</h3>
+              <p class="pillar__text">Платформа продвигается через собственные конструкции агентства — без денежных затрат</p>
+            </div>
+            <div class="pillar">
+              <h3 class="pillar__title">ИИ-масштабирование</h3>
+              <p class="pillar__text">5 ИИ-модулей позволяют обслуживать 500+ участников без роста штата</p>
+            </div>
+          </div>
+
+          <h3 class="case-subtitle">Монетизация</h3>
+          <div class="prices">
+            <div class="price">
+              <span class="price__value">5%</span>
+              <span class="price__label">Комиссия с каждой бартерной сделки</span>
+            </div>
+            <div class="price">
+              <span class="price__value">1 500 / 4 500 ₽</span>
+              <span class="price__label">Подписка в месяц: тарифы «Стандарт» и «Бизнес»</span>
+            </div>
+            <div class="price">
+              <span class="price__value">500 / 5 000 ₽</span>
+              <span class="price__label">ИИ-сервисы: макет и аналитический отчёт</span>
+            </div>
+          </div>
+
+          <div class="goals">
+            <span class="goals__label">Цели стратегии на 3 года</span>
+            <ul class="goals__list">
+              <li><b>≥ 13,95 млн ₽</b> выручки платформы в год</li>
+              <li><b>500+</b> участников из МСП</li>
+              <li><b>≥ 20%</b> рентабельность</li>
+              <li><b>≥ 15%</b> портфеля конструкций в бартерном фонде</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-block reveal">
+        <h2 class="case-block__title">Как работает бартер</h2>
+        <div class="case-block__text">
+          <ol class="steps">
+            <li class="step">
+              <span class="step__num">01</span>
+              <h3 class="step__title">Описать предложение</h3>
+              <p class="step__text">Компания указывает, что готова отдать. ИИ оценивает рыночную стоимость и предлагает эквивалентный обмен</p>
+            </li>
+            <li class="step">
+              <span class="step__num">02</span>
+              <h3 class="step__title">Получить партнёра</h3>
+              <p class="step__text">Алгоритм подбирает подходящие конструкции и партнёров по аудитории и географии</p>
+            </li>
+            <li class="step">
+              <span class="step__num">03</span>
+              <h3 class="step__title">Обменяться и отчитаться</h3>
+              <p class="step__text">Договор мены формируется автоматически, а размещение проверяется компьютерным зрением</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <figure class="shot reveal" data-label="img/affix/flow.jpg">
+        <img src="img/affix/flow.jpg" alt="Шаги активной сделки и пять ИИ-модулей платформы" onerror="this.remove()">
+      </figure>
+
+      <section class="case-block reveal">
+        <h2 class="case-block__title">Архитектура: 5 ИИ-модулей</h2>
+        <div class="case-block__text">
+          <p>
+            Для каждого модуля я подобрала технологии и нашла мировой аналог, чтобы
+            показать, что такие решения уже работают на рынке. Все технологии —
+            российские, без санкционных рисков.
+          </p>
+
+          <div class="ai-grid">
+            <article class="ai-card">
+              <span class="ai-card__num">01</span>
+              <h3 class="ai-card__title">Оценка инвентаря</h3>
+              <dl class="ai-card__meta">
+                <dt>Технологии</dt><dd>ML + Яндекс.Карты, XGBoost</dd>
+                <dt>Решает</dt><dd>Объективная оценка эквивалентности обмена</dd>
+                <dt>Аналог</dt><dd>HypeAuditor</dd>
+              </dl>
+            </article>
+
+            <article class="ai-card">
+              <span class="ai-card__num">02</span>
+              <h3 class="ai-card__title">Подбор партнёров</h3>
+              <dl class="ai-card__meta">
+                <dt>Технологии</dt><dd>Коллаборативная фильтрация</dd>
+                <dt>Решает</dt><dd>Автоматический матчинг сделок</dd>
+                <dt>Аналог</dt><dd>Impact.com</dd>
+              </dl>
+            </article>
+
+            <article class="ai-card">
+              <span class="ai-card__num">03</span>
+              <h3 class="ai-card__title">Генерация контента</h3>
+              <dl class="ai-card__meta">
+                <dt>Технологии</dt><dd>YandexGPT 3 Pro</dd>
+                <dt>Решает</dt><dd>Рекламные тексты и макеты</dd>
+                <dt>Аналог</dt><dd>Persado</dd>
+              </dl>
+            </article>
+
+            <article class="ai-card">
+              <span class="ai-card__num">04</span>
+              <h3 class="ai-card__title">Мониторинг исполнения</h3>
+              <dl class="ai-card__meta">
+                <dt>Технологии</dt><dd>YOLO v8 + NLP, API ВКонтакте</dd>
+                <dt>Решает</dt><dd>Проверка факта размещения</dd>
+                <dt>Аналог</dt><dd>Upfluence</dd>
+              </dl>
+            </article>
+
+            <article class="ai-card">
+              <span class="ai-card__num">05</span>
+              <h3 class="ai-card__title">Аналитика и прогноз</h3>
+              <dl class="ai-card__meta">
+                <dt>Технологии</dt><dd>Prophet, Apache Superset</dd>
+                <dt>Решает</dt><dd>KPI-дашборд и прогнозы</dd>
+                <dt>Аналог</dt><dd>Google Performance Max</dd>
+              </dl>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-block reveal">
+        <h2 class="case-block__title">Работа с айдентикой</h2>
+        <div class="case-block__text">
+          <p>
+            Платформа должна была выглядеть как часть бренда «Аффикс Групп», а не как сторонний
+            сервис, поэтому я взяла из айдентики агентства основные цвета и шрифты. Фирменный
+            красный стал цветом главных действий и ключевых цифр, чёрный — цветом навигации
+            и акцентных блоков. Для статусов сделок я добавила зелёный: им отмечены выполненные
+            шаги и процент совпадения предложений.
+          </p>
+
+          <div class="swatches">
+            <span class="swatch" style="--c:#1A1A1A;--t:#FFFFFF">Чёрный<br>#1A1A1A</span>
+            <span class="swatch" style="--c:#D03730;--t:#FFFFFF">Красный<br>#D03730</span>
+            <span class="swatch" style="--c:#F8F8F8">Фон<br>#F8F8F8</span>
+            <span class="swatch" style="--c:#FFFFFF">Карточки<br>#FFFFFF</span>
+          </div>
+          <p class="case-note">Шрифт: [название фирменного шрифта]</p>
+        </div>
+      </section>
+
+      <section class="case-block reveal">
+        <h2 class="case-block__title">Ключевые экраны</h2>
+        <div class="case-block__text">
+          <p>
+            Стратегию я перевела в интерфейс: 5 экранов веб-версии — лендинг, биржа предложений,
+            личный кабинет, ИИ-оценка инвентаря и страница сделки — и мобильная адаптация
+            главных сценариев. Каждый ИИ-модуль получил своё место в интерфейсе: оценка
+            и процент совпадения — на бирже, проверка размещения — в ходе сделки, KPI — в кабинете.
+          </p>
+        </div>
+      </section>
+
+      <div class="gallery">
+        <figure class="gallery__item reveal">
+          <div class="shot" data-label="img/affix/landing.jpg">
+            <img src="img/affix/landing.jpg" alt="Лендинг платформы" onerror="this.remove()">
+          </div>
+          <figcaption>Лендинг: ценность продукта на первом экране и три шага, которые объясняют, как работает бартер</figcaption>
+        </figure>
+
+        <figure class="gallery__item reveal">
+          <div class="shot" data-label="img/affix/exchange.jpg">
+            <img src="img/affix/exchange.jpg" alt="Биржа предложений" onerror="this.remove()">
+          </div>
+          <figcaption>Биржа предложений: фильтры по типу рекламы и сегменту, у каждой карточки — ИИ-оценка и процент совпадения</figcaption>
+        </figure>
+
+        <figure class="gallery__item reveal">
+          <div class="shot" data-label="img/affix/dashboard.jpg">
+            <img src="img/affix/dashboard.jpg" alt="Личный кабинет" onerror="this.remove()">
+          </div>
+          <figcaption>Личный кабинет: ключевые показатели, активные сделки со статусами, тариф и лента событий</figcaption>
+        </figure>
+
+        <figure class="gallery__item reveal">
+          <div class="shot" data-label="img/affix/ai.jpg">
+            <img src="img/affix/ai.jpg" alt="ИИ-оценка рекламного инвентаря" onerror="this.remove()">
+          </div>
+          <figcaption>ИИ-оценка: параметры можно задать полями или описать обычными словами — модель рассчитает стоимость и предложит обмен</figcaption>
+        </figure>
+
+        <figure class="gallery__item gallery__item--wide reveal">
+          <div class="shot" data-label="img/affix/deal.jpg">
+            <img src="img/affix/deal.jpg" alt="Страница сделки" onerror="this.remove()">
+          </div>
+          <figcaption>Страница сделки: что даёт каждая сторона, эквивалентность обмена, ход сделки по шагам, документы и чат</figcaption>
+        </figure>
+
+        <figure class="gallery__item gallery__item--wide reveal">
+          <div class="shot" data-label="img/affix/mobile.jpg">
+            <img src="img/affix/mobile.jpg" alt="Мобильная версия: биржа, личный кабинет и сделка" onerror="this.remove()">
+          </div>
+          <figcaption>Мобильная версия: биржа предложений, личный кабинет и страница сделки</figcaption>
+        </figure>
+      </div>
+
+      <section class="case-block reveal">
+        <h2 class="case-block__title">Результат</h2>
+        <div class="case-block__text">
+          <p>
+            Целостная концепция продукта — от бизнес-модели до интерфейса: стратегия с тремя
+            источниками дохода и целевыми метриками на 3 года, архитектура из 5 ИИ-модулей
+            на российских технологиях и интерфейс веб- и мобильной версии, который я
+            спроектировала за 4 дня.
+          </p>
+        </div>
+      </section>
+
+      <section class="case-block reveal">
+        <h2 class="case-block__title">Чему научилась</h2>
+        <div class="case-block__text">
+          <p>
+            Связывать экономику продукта с интерфейсом: каждое решение на экране опирается
+            на модель монетизации и задачу конкретного ИИ-модуля. И работать в рамках чужой
+            айдентики — сохранять узнаваемость бренда, но дополнять его тем, что нужно продукту.
+          </p>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- ===== Дальше ===== -->
+    <div class="container">
+      <a href="index.html#works" class="next-case reveal">
+        <span class="next-case__label">Дальше</span>
+        <span class="next-case__title">Другие проекты</span>
+        <span class="next-case__arrow" aria-hidden="true">→</span>
+      </a>
+    </div>
+
+  </main>
+
+  <!-- ===== Контакты ===== -->
+  <footer id="contacts" class="contacts">
+    <div class="container">
+      <p class="contacts__label reveal">Контакты</p>
+
+      <h2 class="contacts__title reveal">
+        Давайте<br>поработаем <span class="contacts__accent">вместе</span>
+      </h2>
+
+      <p class="contacts__text reveal">
+        Открыта к предложениям о работе на позициях UI/UX и frontend, а также к интересным проектам.
+      </p>
+
+      <div class="contacts__actions reveal">
+        <button class="contacts__btn contacts__btn--primary" type="button" data-copy="[your@mail.ru]">
+          <span>[your@mail.ru]</span>
+          <span class="contacts__copy" aria-live="polite">Скопировать</span>
+        </button>
+        <a class="contacts__btn" href="https://t.me/[username]" target="_blank" rel="noopener">Telegram ↗</a>
+        <a class="contacts__btn" href="https://github.com/kiki555-dev" target="_blank" rel="noopener">GitHub ↗</a>
+        <a class="contacts__btn" href="[ссылка на резюме]" target="_blank" rel="noopener">Резюме ↗</a>
+      </div>
+
+      <div class="contacts__bottom">
+        <span>© Кира, 2026</span>
+        <span>Сделано вручную: HTML, CSS, JavaScript</span>
+        <a href="#top" class="contacts__up">Наверх ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

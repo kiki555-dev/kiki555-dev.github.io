@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ledger — калькулятор ROI и NPV | кейс Киры</title>
+  <meta name="description" content="Кейс: финансовый калькулятор на чистом JavaScript — ROI, NPV, срок окупаемости и график денежного потока на canvas.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== Шапка ===== -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="index.html" class="logo">kira.dev</a>
+
+      <button class="burger" id="burger" type="button"
+              aria-label="Открыть меню" aria-expanded="false" aria-controls="nav">
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav" id="nav">
+        <a href="index.html#works" class="nav__link">Проекты</a>
+        <a href="index.html#about" class="nav__link">Обо мне</a>
+        <a href="index.html#skills" class="nav__link">Что умею?</a>
+        <a href="#contacts" class="btn btn--dark">Написать</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===== Начало кейса ===== -->
+    <section class="case-hero">
+      <div class="container">
+        <a href="index.html#works" class="back-link reveal">← Все проекты</a>
+
+        <div class="case-hero__pills reveal">
+          <span class="pill pill--forest">Пет-проект</span>
+          <span class="pill">Дизайн + код</span>
+          <span class="pill">Vanilla JS</span>
+          <span class="pill">Canvas</span>
+        </div>
+
+        <h1 class="case-title reveal">Ledger</h1>
+
+        <p class="case-lead reveal">
+          Финансовый калькулятор, который за секунду отвечает на вопрос «стоит ли вкладываться»:
+          считает NPV, ROI и срок окупаемости по месячному денежному потоку и показывает,
+          когда проект выходит в плюс. Дизайн и код — мои, без фреймворков и библиотек.
+        </p>
+
+        <div class="case-links reveal">
+          <a class="case-link case-link--primary" href="https://kiki555-dev.github.io/Ledger/" target="_blank" rel="noopener">Открыть Ledger ↗</a>
+          <a class="case-link" href="https://github.com/kiki555-dev/Ledger" target="_blank" rel="noopener">Код на GitHub ↗</a>
+        </div>
+
+        <dl class="case-meta reveal">
+          <div class="case-meta__item">
+            <dt>Роль</dt>
+            <dd>Дизайн и разработка</dd>
+          </div>
+          <div class="case-meta__item">
+            <dt>Стек</dt>
+            <dd>HTML, CSS, JavaScript, Canvas API</dd>
+          </div>
+          <div class="case-meta__item">
+            <dt>Платформы</dt>
+            <dd>Веб, адаптив под телефон</dd>
+          </div>
+          <div class="case-meta__item">
+            <dt>Статус</dt>
+            <dd>Опубликован на GitHub Pages</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ===== Обложка ===== -->
+    <div class="container">
+      <figure class="shot shot--cover reveal" data-label="img/ledger/cover.jpg">
+        <img src="img/ledger/cover.jpg" alt="Ledger на компьютере и телефоне" onerror="this.remove()">
+      </figure>
+    </div>
+
+    <!-- ===== Блоки кейса ===== -->
+    <div class="container case-body">
+
+      <section class="case-block reveal">
+        <h2 class="case-block__title">Задача</h2>
+        <div class="case-block__text">
+          <p>
+            Оценка инвестиции обычно живёт в таблицах: формулы, ячейки - легко ошибиться.
+            Я хотела сделать инструмент, где достаточно ввести пять чисел, и сразу увидеть
+            ответ и полноценную картину: в какой месяц вложения окупятся и сколько проект принесёт.
+          </p>
+          <p>
+            Здесь пригодилось моё экономическое образование: формулы NPV и ROI я знаю
+            не по документации, а по учёбе.
+          </p>
+        </div>
+      </section>
+
+      <section class="case-block reveal">
+        <h2 class="case-block__title">Как считает</h2>
+        <div class="case-block__text">
+          <ol class="steps">
+            <li class="step">
+              <span class="step__num">NPV</span>
+              <h3 class="step__title">Чистая приведённая стоимость</h3>
+              <p class="step__text">Месячный поток (выручка минус расходы) дисконтируется по месячной ставке и суммируется за весь горизонт, минус начальные инвестиции</p>
+            </li>
+            <li class="step">
+              <span class="step__num">ROI</span>
+              <h3 class="step__title">Рентабельность вложений</h3>
+              <p class="step__text">Сколько процентов сверх вложенного принесёт проект за выбранный период</p>
+            </li>
+            <li class="step">
+              <span class="step__num">Срок</span>
+              <h3 class="step__title">Окупаемость</h3>
+              <p class="step__text">Первый месяц, в котором накопленный денежный поток становится неотрицательным. Если такого нет — калькулятор так и пишет</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="case-block reveal">
+        <h2 class="case-block__title">Интерфейс</h2>
+        <div class="case-block__text">
+          <p>
+            Слева — параметры, справа — ответ. Главное число, NPV, крупно наверху: это первое,
+            на что смотрят. Ниже — ROI, срок окупаемости и итог, а под ними график накопленного
+            денежного потока: линия меняет цвет с рыжего на зелёный в момент, когда проект
+            выходит в плюс.
+          </p>
+          <p>
+            Визуально — спокойный «финансовый» стиль: глубокий зелёный, как у бумажных
+            бухгалтерских книг, золотая кнопка действия и моноширинный шрифт для цифр,
+            чтобы разряды стояли ровно.
+          </p>
+
+          <div class="swatches">
+            <span class="swatch" style="--c:#0F241C;--t:#F2EFE6">Фон<br>#0F241C</span>
+            <span class="swatch" style="--c:#16332A;--t:#F2EFE6">Панели<br>#16332A</span>
+            <span class="swatch" style="--c:#C9A227">Действие<br>#C9A227</span>
+            <span class="swatch" style="--c:#7FB69E">Прибыль<br>#7FB69E</span>
+          </div>
+          <p class="case-note">Шрифты: Fraunces — заголовки, Inter — текст, IBM Plex Mono — цифры</p>
+        </div>
+      </section>
+
+      <div class="gallery">
+        <figure class="gallery__item gallery__item--wide reveal">
+          <div class="shot" data-label="img/ledger/desktop.jpg">
+            <img src="img/ledger/desktop.jpg" alt="Ledger: десктоп-версия" onerror="this.remove()">
+          </div>
+          <figcaption>Десктоп: параметры и результат на одном экране, без прокрутки</figcaption>
+        </figure>
+
+        <figure class="gallery__item gallery__item--wide reveal">
+          <div class="shot" data-label="img/ledger/mobile.jpg">
+            <img src="img/ledger/mobile.jpg" alt="Ledger: мобильная версия" onerror="this.remove()">
+          </div>
+          <figcaption>Телефон: колонки встают друг под друга, показатели — в один столбец</figcaption>
+        </figure>
+      </div>
+
+      <section class="case-block reveal">
+        <h2 class="case-block__title">Технические решения</h2>
+        <div class="case-block__text">
+          <ul class="tech-list">
+            <li><b>График на чистом Canvas API</b> — без библиотек. Canvas подстраивается под плотность пикселей экрана, поэтому линия чёткая и на Retina</li>
+            <li><b>Цвет по смыслу</b> — каждый отрезок графика окрашивается отдельно: ниже нуля рыжий, выше — зелёный</li>
+            <li><b>Анимация главного числа</b> — NPV «докручивается» до нового значения с плавным замедлением через requestAnimationFrame</li>
+            <li><b>Валидация</b> — понятные сообщения вместо ошибок: пустые поля, отрицательные значения, горизонт больше 10 лет</li>
+            <li><b>Адаптив и перерисовка</b> — при изменении размера окна график перерисовывается под новую ширину</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="case-block reveal">
+        <h2 class="case-block__title">Чему научилась</h2>
+        <div class="case-block__text">
+          <p>
+            Рисовать данные без готовых библиотек и переводить экономические формулы в понятный
+            интерфейс: человеку нужен не расчёт, а ответ — окупится или нет и когда.
+          </p>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- ===== Дальше ===== -->
+    <div class="container">
+      <a href="affix.html" class="next-case reveal">
+        <span class="next-case__label">Следующий кейс</span>
+        <span class="next-case__title">АффиксБартер</span>
+        <span class="next-case__arrow" aria-hidden="true">→</span>
+      </a>
+    </div>
+
+  </main>
+
+  <!-- ===== Контакты ===== -->
+  <footer id="contacts" class="contacts">
+    <div class="container">
+      <p class="contacts__label reveal">Контакты</p>
+
+      <h2 class="contacts__title reveal">
+        Давайте<br>поработаем <span class="contacts__accent">вместе</span>
+      </h2>
+
+      <p class="contacts__text reveal">
+        Открыта к предложениям о работе на позициях UI/UX и frontend, а также к интересным проектам.
+      </p>
+
+      <div class="contacts__actions reveal">
+        <button class="contacts__btn contacts__btn--primary" type="button" data-copy="[your@mail.ru]">
+          <span>kira.gnatyuk@mail.ru</span>
+          <span class="contacts__copy" aria-live="polite">Скопировать</span>
+        </button>
+        <a class="contacts__btn" href="https://t.me/kwkirra" target="_blank" rel="noopener">Telegram ↗</a>
+        <a class="contacts__btn" href="https://github.com/kiki555-dev" target="_blank" rel="noopener">GitHub ↗</a>
+        <a class="contacts__btn" href="https://drive.google.com/file/d/1ScKjacYx1f1wkusGlJE7G8UYGajfovh7/view?usp=sharing" target="_blank" rel="noopener">Резюме ↗</a>
+      </div>
+
+      <div class="contacts__bottom">
+        <span>© Кира, 2026</span>
+        <span>Сделано вручную: HTML, CSS, JavaScript</span>
+        <a href="#top" class="contacts__up">Наверх ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

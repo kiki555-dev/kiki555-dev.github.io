@@ -116,3 +116,48 @@ window.addEventListener('load', () => {
 
   observer.observe(box);
 });
+// ===== 3. Мобильное меню =====
+document.addEventListener('DOMContentLoaded', () => {
+  const burger = document.getElementById('burger');
+  const nav = document.getElementById('nav');
+  if (!burger || !nav) return;
+
+  function closeMenu() {
+    nav.classList.remove('nav--open');
+    burger.setAttribute('aria-expanded', 'false');
+    burger.setAttribute('aria-label', 'Открыть меню');
+  }
+
+  burger.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('nav--open');
+    burger.setAttribute('aria-expanded', String(isOpen));
+    burger.setAttribute('aria-label', isOpen ? 'Закрыть меню' : 'Открыть меню');
+  });
+
+  // Закрываем меню после клика по ссылке и по клавише Esc
+  nav.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') closeMenu();
+  });
+});
+// ===== 4. Копирование почты в один клик =====
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('[data-copy]').forEach((button) => {
+    const label = button.querySelector('.contacts__copy');
+
+    button.addEventListener('click', async () => {
+      const text = button.dataset.copy;
+
+      try {
+        await navigator.clipboard.writeText(text);
+        if (label) label.textContent = 'Скопировано ✓';
+        setTimeout(() => {
+          if (label) label.textContent = 'Скопировать';
+        }, 2000);
+      } catch (error) {
+        // если браузер не дал скопировать — открываем почтовую программу
+        window.location.href = `mailto:${text}`;
+      }
+    });
+  });
+});
