@@ -115,6 +115,7 @@ window.addEventListener('load', () => {
   }, { threshold: 0.3 });
 
   observer.observe(box);
+});
 
 document.addEventListener('DOMContentLoaded', () => {
   const burger = document.getElementById('burger');
