@@ -1,6 +1,4 @@
-/* =========================================================
-   1. ЦВЕТА И ШРИФТЫ
-   ========================================================= */
+
 :root {
   --bg: #F4F1EC;
   --ink: #141414;
@@ -16,10 +14,6 @@
   --font-text: 'Manrope', sans-serif;
 }
 
-
-/* =========================================================
-   2. БАЗА
-   ========================================================= */
 *,
 *::before,
 *::after {
@@ -72,9 +66,6 @@ a {
 }
 
 
-/* =========================================================
-   3. КНОПКИ
-   ========================================================= */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -98,10 +89,6 @@ a {
   transform: translateY(-2px);
 }
 
-
-/* =========================================================
-   4. ШАПКА
-   ========================================================= */
 .header {
   position: sticky;
   top: 0;
@@ -145,7 +132,6 @@ a {
   color: var(--accent);
 }
 
-/* Бургер (виден только на узких экранах) */
 .burger {
   display: none;
   flex-direction: column;
@@ -170,7 +156,7 @@ a {
   transition: transform 0.3s ease;
 }
 
-/* Две полоски превращаются в крестик */
+
 .burger[aria-expanded="true"] span:first-child {
   transform: translateY(4px) rotate(45deg);
 }
@@ -184,7 +170,6 @@ a {
     display: flex;
   }
 
-  /* Меню выпадает под шапкой */
   .nav {
     position: absolute;
     top: 100%;
@@ -220,15 +205,13 @@ a {
     margin-top: 20px;
   }
 }
-/* =========================================================
-   5. ПЕРВЫЙ ЭКРАН
-   ========================================================= */
+
 .hero {
   position: relative;
   min-height: calc(100vh - 80px);
   min-height: calc(100svh - 80px);
   padding-top: clamp(24px, 5vh, 64px);
-  padding-bottom: var(--pile, 220px); /* место для кучки тегов, считает скрипт */
+  padding-bottom: var(--pile, 220px);
   overflow: hidden;
 }
 
@@ -241,7 +224,7 @@ a {
   align-items: end;
 }
 
-/* Плашка «Открыта к предложениям» */
+
 .status {
   display: inline-flex;
   align-items: center;
@@ -269,7 +252,7 @@ a {
   100% { box-shadow: 0 0 0 0 rgba(30, 158, 85, 0); }
 }
 
-/* Заголовок: меньшее из «10% ширины» и «15% высоты» экрана */
+
 .hero__title {
   margin: 0 0 28px;
   font-family: var(--font-head);
@@ -294,7 +277,6 @@ a {
   color: var(--accent);
 }
 
-/* Звёздочка-кнопка */
 .hero__star-btn {
   display: inline-flex;
   padding: 0;
@@ -331,7 +313,7 @@ a {
   to { transform: rotate(360deg); }
 }
 
-/* Текст и подсказка */
+
 .hero__lead {
   max-width: 560px;
   margin: 0;
@@ -355,23 +337,25 @@ a {
   }
 }
 
-/* Фото: высота зависит от экрана, ширина — по пропорции 4:5 */
 .hero__photo {
+  --photo-h: clamp(320px, min(52vh, 40vw), 560px);
   position: relative;
-  height: clamp(320px, min(52vh, 40vw), 560px);
-  aspect-ratio: 4 / 5;
+  height: var(--photo-h);
+  width: calc(var(--photo-h) * 0.8); 
+  justify-self: end;
   border-radius: 36px;
   background: #E2DBCF;
 }
 
 .hero__photo img {
+  position: absolute; 
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: inherit;
 }
 
-/* Стикеры: размер шрифта растёт и уменьшается вместе с фото */
 .hero__sticker {
   position: absolute;
   padding: 0.6em 1.15em;
@@ -397,7 +381,6 @@ a {
   transform: rotate(6deg);
 }
 
-/* --- Планшет и небольшой ноутбук --- */
 @media (max-width: 1024px) {
   .hero__inner {
     gap: 32px;
@@ -408,20 +391,17 @@ a {
   }
 
   .hero__photo {
-    height: clamp(260px, min(38vh, 40vw), 400px);
+    --photo-h: clamp(260px, min(38vh, 40vw), 400px);
     border-radius: 28px;
   }
 }
 
-/* --- Низкий экран (ноутбук с маленькой высотой, телефон горизонтально):
-       первый экран просто прокручивается --- */
 @media (max-height: 560px) and (min-width: 641px) {
   .hero {
     min-height: auto;
   }
 }
 
-/* --- Телефон: фото маленькой карточкой рядом с плашкой --- */
 @media (max-width: 640px) {
   .hero {
     padding-top: 20px;
@@ -438,7 +418,6 @@ a {
     align-items: start;
   }
 
-  /* Обёртка текста «растворяется», и её содержимое встаёт прямо в сетку */
   .hero__text {
     display: contents;
   }
@@ -455,7 +434,7 @@ a {
 
   .hero__photo {
     grid-area: photo;
-    height: 130px;
+    --photo-h: 130px;
     border-radius: 20px;
   }
 
@@ -490,17 +469,13 @@ a {
     right: -8px;
   }
 }
-/* =========================================================
-   6. ПАДАЮЩИЕ ТЕГИ
-   ========================================================= */
 
-/* Слой с тегами накрывает весь первый экран */
 .gravity {
   position: absolute;
   inset: 0;
   z-index: 3;
   overflow: hidden;
-  pointer-events: none; /* сквозь пустые места можно кликать по тексту */
+  pointer-events: none; 
 }
 
 .hero--strict .gravity {
@@ -524,7 +499,7 @@ a {
   cursor: grab;
   will-change: transform;
   visibility: hidden;
-  pointer-events: auto; /* сами теги ловят мышку */
+  pointer-events: auto; 
 }
 
 .gravity__tag:active {
@@ -545,7 +520,6 @@ a {
   -webkit-user-drag: none;
 }
 
-/* Запасной вид без анимации: теги просто лежат внизу экрана */
 .gravity--static {
   inset: auto 0 0 0;
   display: flex;
@@ -562,10 +536,6 @@ a {
   transform: none !important;
 }
 
-
-/* =========================================================
-   7. БЕГУЩАЯ СТРОКА
-   ========================================================= */
 .marquee {
   overflow: hidden;
   padding: 22px 0;
@@ -596,9 +566,6 @@ a {
 }
 
 
-/* =========================================================
-   8. ПРОЕКТЫ
-   ========================================================= */
 .section-head {
   display: flex;
   justify-content: space-between;
@@ -677,7 +644,6 @@ a {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-/* Карточка */
 .card {
   position: relative;
   display: flex;
@@ -764,7 +730,6 @@ a {
   white-space: nowrap;
 }
 
-/* Широкая карточка (Аффикс Групп) */
 .card--wide {
   display: grid;
   grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
@@ -786,7 +751,6 @@ a {
   font-size: clamp(24px, 2.4vw, 32px);
 }
 
-/* Бейджи статуса */
 .badge {
   position: absolute;
   top: 30px;
@@ -806,9 +770,6 @@ a {
 .badge--nda     { background: var(--accent); color: #FFFFFF; }
 
 
-/* =========================================================
-   9. МИНИ-МАКЕТЫ В КАРТОЧКАХ
-   ========================================================= */
 .mock-line {
   display: block;
   height: 8px;
@@ -883,7 +844,7 @@ a {
 
 .mock-dash__bar--accent { background: var(--accent); }
 
-/* Окно браузера */
+
 .mock-browser {
   display: flex;
   flex-direction: column;
@@ -915,7 +876,6 @@ a {
   padding: 22px;
 }
 
-/* Telegram-бот */
 .mock-tg {
   display: flex;
   flex-direction: column;
@@ -987,7 +947,7 @@ a {
   text-align: center;
 }
 
-/* Слот «Новый проект» */
+
 .card--soon {
   justify-content: center;
   border: 2px dashed var(--line);
@@ -1021,7 +981,6 @@ a {
   font-size: 32px;
 }
 
-/* Карточки под NDA: превью размыто, сверху плашка */
 .card--locked .card__media > *:not(.lock) {
   filter: blur(6px);
   opacity: 0.7;
@@ -1047,10 +1006,6 @@ a {
 }
 
 
-
-/* =========================================================
-   10. ОБО МНЕ
-   ========================================================= */
 .about {
   display: grid;
   grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
@@ -1098,10 +1053,6 @@ a {
   text-align: right;
 }
 
-
-/* =========================================================
-   11. ЧТО УМЕЮ
-   ========================================================= */
 .skills {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1153,9 +1104,6 @@ a {
 }
 
 
-/* =========================================================
-   12. КОНТАКТЫ
-   ========================================================= */
 .contacts {
   padding: 120px 0 40px;
   background: var(--ink);
@@ -1179,7 +1127,6 @@ a {
   letter-spacing: -0.04em;
 }
 
-/* Светлее основного акцента, чтобы хорошо читался на чёрном фоне */
 .contacts__accent {
   color: #9C88FF;
 }
@@ -1226,7 +1173,7 @@ a {
   outline-offset: 4px;
 }
 
-/* Главная кнопка — почта */
+
 .contacts__btn--primary {
   background: var(--accent);
   border-color: var(--accent);
@@ -1266,7 +1213,6 @@ a {
   color: #9C88FF;
 }
 
-/* Контакты на телефоне: кнопки во всю ширину */
 @media (max-width: 640px) {
   .contacts {
     padding: 80px 0 32px;
@@ -1289,10 +1235,6 @@ a {
   }
 }
 
-
-/* =========================================================
-   13. ПОЯВЛЕНИЕ ПРИ СКРОЛЛЕ
-   ========================================================= */
 .reveal {
   opacity: 0;
   transform: translateY(40px);
@@ -1305,9 +1247,6 @@ a {
 }
 
 
-/* =========================================================
-   14. ПЛАНШЕТ (до 960px)
-   ========================================================= */
 @media (max-width: 960px) {
   .cards--two,
   .cards--three {
@@ -1325,9 +1264,6 @@ a {
 }
 
 
-/* =========================================================
-   15. ПЛАНШЕТ ПОМЕНЬШЕ (до 860px)
-   ========================================================= */
 @media (max-width: 860px) {
   .card--wide {
     grid-template-columns: 1fr;
@@ -1344,9 +1280,6 @@ a {
   }
 }
 
-/* =========================================================
-   16. ТЕЛЕФОН (до 640px)
-   ========================================================= */
 @media (max-width: 640px) {
   body {
     font-size: 16px;
@@ -1406,7 +1339,7 @@ a {
     left: 26px;
   }
 
-  /* Обо мне: подпись над значением, а не рядом */
+
   .facts__row {
     flex-direction: column;
     gap: 4px;
@@ -1428,18 +1361,14 @@ a {
   }
 }
 
-/* Совсем узкие телефоны (iPhone SE, старые Android) */
+
 @media (max-width: 380px) {
   .container {
     padding: 0 16px;
   }
 }
 
-/* =========================================================
-   16.5 СТРАНИЦЫ КЕЙСОВ
-   ========================================================= */
 
-/* --- Начало кейса --- */
 .case-hero {
   padding: 48px 0 56px;
 }
@@ -1498,7 +1427,7 @@ a {
   line-height: 1.55;
 }
 
-/* Кнопки-ссылки (Ledger) */
+
 .case-links {
   display: flex;
   flex-wrap: wrap;
@@ -1534,7 +1463,6 @@ a {
   border-color: var(--accent);
 }
 
-/* Роль, стек, платформы, сроки */
 .case-meta {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -1557,7 +1485,6 @@ a {
   font-weight: 700;
 }
 
-/* --- Картинки (пока файла нет, видна плашка с подписью) --- */
 .shot {
   position: relative;
   margin: 0;
@@ -1593,7 +1520,6 @@ a {
   border-radius: 36px;
 }
 
-/* --- Текстовые блоки: заголовок слева, текст справа --- */
 .case-body {
   padding: 56px 24px 40px;
 }
@@ -1638,7 +1564,7 @@ a {
   font-size: 20px;
 }
 
-/* --- Три опоры стратегии --- */
+
 .pillars {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1668,7 +1594,7 @@ a {
   line-height: 1.5 !important;
 }
 
-/* --- Монетизация --- */
+
 .prices {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1731,7 +1657,7 @@ a {
   color: #9C88FF;
 }
 
-/* --- Шаги «Как работает» --- */
+
 .steps {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1772,7 +1698,6 @@ a {
   line-height: 1.5 !important;
 }
 
-/* --- ИИ-модули --- */
 .ai-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1790,7 +1715,7 @@ a {
 }
 
 .ai-card:last-child {
-  grid-column: 1 / -1; /* пятая карточка на всю ширину */
+  grid-column: 1 / -1; 
 }
 
 .ai-card__num {
@@ -1825,7 +1750,6 @@ a {
   margin: 0;
 }
 
-/* --- Список технических решений (Ledger) --- */
 .tech-list {
   display: flex;
   flex-direction: column;
@@ -1843,7 +1767,7 @@ a {
   line-height: 1.5;
 }
 
-/* --- Палитра --- */
+
 .swatches {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -1865,7 +1789,7 @@ a {
   line-height: 1.4;
 }
 
-/* --- Галерея экранов --- */
+
 .gallery {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1887,7 +1811,7 @@ a {
   font-size: 16px;
 }
 
-/* --- Ссылка «Дальше» --- */
+
 .next-case {
   display: grid;
   grid-template-columns: 1fr auto;
@@ -1938,7 +1862,7 @@ a {
   transform: translateX(6px);
 }
 
-/* --- Кейсы на планшете --- */
+
 @media (max-width: 960px) {
   .pillars,
   .prices {
@@ -1970,7 +1894,7 @@ a {
   }
 }
 
-/* --- Кейсы на телефоне --- */
+
 @media (max-width: 640px) {
   .case-hero {
     padding: 24px 0 40px;
@@ -2029,10 +1953,6 @@ a {
 
 
 
-/* =========================================================
-   17. ДЛЯ ТЕХ, У КОГО ОТКЛЮЧЕНЫ АНИМАЦИИ В СИСТЕМЕ
-   Этот блок всегда должен быть последним
-   ========================================================= */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
