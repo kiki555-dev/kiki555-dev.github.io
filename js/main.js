@@ -115,8 +115,7 @@ window.addEventListener('load', () => {
   }, { threshold: 0.3 });
 
   observer.observe(box);
-});
-// ===== 3. Мобильное меню =====
+
 document.addEventListener('DOMContentLoaded', () => {
   const burger = document.getElementById('burger');
   const nav = document.getElementById('nav');
@@ -134,13 +133,13 @@ document.addEventListener('DOMContentLoaded', () => {
     burger.setAttribute('aria-label', isOpen ? 'Закрыть меню' : 'Открыть меню');
   });
 
-  // Закрываем меню после клика по ссылке и по клавише Esc
+  
   nav.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') closeMenu();
   });
 });
-// ===== 4. Копирование почты в один клик =====
+
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('[data-copy]').forEach((button) => {
     const label = button.querySelector('.contacts__copy');
@@ -155,7 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
           if (label) label.textContent = 'Скопировать';
         }, 2000);
       } catch (error) {
-        // если браузер не дал скопировать — открываем почтовую программу
+        
         window.location.href = `mailto:${text}`;
       }
     });
